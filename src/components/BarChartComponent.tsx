@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell } from 'recharts';
 import { useDashboardStore } from '../store/dashboardStore';
-import type { CategoryData } from '../types';
+
 import html2canvas from 'html2canvas';
 
 interface BarChartComponentProps {
@@ -13,7 +13,7 @@ const BarChartComponent: React.FC<BarChartComponentProps> = ({ title = 'Category
   const chartRef = useRef<HTMLDivElement>(null);
 
   // Handle click on bar
-  const handleBarClick = (data: CategoryData) => {
+  const handleBarClick = (data: any) => {
     setFilters({ selectedCategory: data.category });
   };
 
@@ -98,7 +98,7 @@ const BarChartComponent: React.FC<BarChartComponentProps> = ({ title = 'Category
               <Legend
                 wrapperStyle={{ paddingTop: '20px' }}
                 iconType="rect"
-                textStyle={{ color: theme === 'dark' ? '#d1d5db' : '#6b7280' }}
+                formatter={(value) => <span style={{ color: theme === 'dark' ? '#d1d5db' : '#6b7280', fontSize: 12 }}>{value}</span>}
               />
               <Bar
                 dataKey="value"

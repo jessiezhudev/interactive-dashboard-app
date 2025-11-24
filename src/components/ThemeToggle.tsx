@@ -31,7 +31,7 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({ className = '' }) => {
         ))}
       </div>
 
-      <style jsx>{`
+      <style>{`
         .theme-toggle-container {
           display: flex;
           align-items: center;

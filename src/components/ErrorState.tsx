@@ -34,7 +34,7 @@ const ErrorState: React.FC<ErrorStateProps> = ({
         )}
       </div>
 
-      <style jsx>{`
+      <style>{`
         .error-container {
           display: flex;
           flex-direction: column;

@@ -74,11 +74,11 @@ const PieChartComponent: React.FC<PieChartComponentProps> = ({ title = 'Category
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie
-                data={pieData}
+                data={pieData.map(item => ({ name: item.name, value: item.value }))}
                 cx="50%"
                 cy="50%"
                 labelLine={false}
-                label={({ name, percent }) => `${name} (${(percent * 100).toFixed(0)}%)`}
+                label={({ name, percent }) => `${name} (${((percent || 0) * 100).toFixed(0)}%)`}
                 outerRadius={80}
                 innerRadius={40}
                 paddingAngle={2}
@@ -108,14 +108,14 @@ const PieChartComponent: React.FC<PieChartComponentProps> = ({ title = 'Category
               <Legend
                 wrapperStyle={{ paddingTop: '20px' }}
                 iconType="circle"
-                textStyle={{ color: theme === 'dark' ? '#d1d5db' : '#6b7280' }}
+                formatter={(value) => <span style={{ color: theme === 'dark' ? '#d1d5db' : '#6b7280', fontSize: 12 }}>{value}</span>}
               />
             </PieChart>
           </ResponsiveContainer>
         )}
       </div>
 
-      <style jsx>{`
+      <style>{`
         .chart-container {
           display: flex;
           flex-direction: column;

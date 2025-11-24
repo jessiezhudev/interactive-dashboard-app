@@ -15,7 +15,7 @@ const LoadingState: React.FC<LoadingStateProps> = ({ className = '' }) => {
       </div>
       <p className="loading-text">Loading data...</p>
 
-      <style jsx>{`
+      <style>{`
         .loading-container {
           display: flex;
           flex-direction: column;

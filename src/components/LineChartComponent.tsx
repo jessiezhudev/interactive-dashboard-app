@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { useDashboardStore } from '../store/dashboardStore';
-import type { TimeSeriesData } from '../types';
+
 import html2canvas from 'html2canvas';
 
 interface LineChartComponentProps {
@@ -13,8 +13,8 @@ const LineChartComponent: React.FC<LineChartComponentProps> = ({ title = 'Time S
   const chartRef = useRef<HTMLDivElement>(null);
 
   // Handle click on data point
-  const handleDotClick = (data: TimeSeriesData) => {
-    setFilters({ selectedTime: data.time, selectedCategory: data.category });
+  const handleDotClick = (props: any) => {
+    setFilters({ selectedTime: props.data.time, selectedCategory: props.data.category });
   };
 
   // Export chart as PNG
@@ -94,7 +94,7 @@ const LineChartComponent: React.FC<LineChartComponentProps> = ({ title = 'Time S
               <Legend
                 wrapperStyle={{ paddingTop: '20px' }}
                 iconType="line"
-                textStyle={{ color: theme === 'dark' ? '#d1d5db' : '#6b7280' }}
+                formatter={(value) => <span style={{ color: theme === 'dark' ? '#d1d5db' : '#6b7280', fontSize: 12 }}>{value}</span>}
               />
               <Line
                 type="monotone"

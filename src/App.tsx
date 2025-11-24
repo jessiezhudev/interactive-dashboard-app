@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDashboardStore } from './store/dashboardStore';
 import { subscribeToData } from './services/dataService';
 import LineChartComponent from './components/LineChartComponent';

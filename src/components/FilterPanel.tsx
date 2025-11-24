@@ -81,7 +81,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ className = '' }) => {
         )}
       </div>
 
-      <style jsx>{`
+      <style>{`
         .filter-panel {
           background: ${theme === 'dark' ? '#1f2937' : '#ffffff'};
           border-radius: 12px;
