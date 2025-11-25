@@ -1,0 +1,185 @@
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+
+// English translations
+const en = {
+  translation: {
+    dashboard: 'Interactive Dashboard',
+    loading: 'Loading data...',
+    error: 'Failed to update data',
+    timeSeries: 'Time Series Data',
+    category: 'Category Data',
+    distribution: 'Distribution',
+    stacked: 'Stacked',
+    grouped: 'Grouped',
+    sortBy: 'Sort by',
+    value: 'Value',
+    categoryLabel: 'Category',
+    showComparison: 'Show Comparison',
+    hideComparison: 'Hide Comparison',
+    donut: 'Donut',
+    pie: 'Pie',
+    showLabels: 'Show Labels',
+    hideLabels: 'Hide Labels',
+    filter: 'Filter',
+    timeRange: 'Time Range',
+    categories: 'Categories',
+    regions: 'Regions',
+    productLines: 'Product Lines',
+    export: 'Export',
+    exportAll: 'Export All',
+    exportCSV: 'Export as CSV',
+    exportJSON: 'Export as JSON',
+    exportPNG: 'Export as PNG',
+    exportSVG: 'Export as SVG',
+    theme: 'Theme',
+    light: 'Light',
+    dark: 'Dark',
+    blue: 'Blue',
+    snapshot: 'Snapshot',
+    createSnapshot: 'Create Snapshot',
+    restoreSnapshot: 'Restore Snapshot',
+    deleteSnapshot: 'Delete Snapshot',
+    renameSnapshot: 'Rename Snapshot',
+    history: 'History',
+    recentActions: 'Recent Actions',
+    undo: 'Undo',
+    redo: 'Redo',
+    settings: 'Settings',
+    chartSettings: 'Chart Settings',
+    color: 'Color',
+    style: 'Style',
+    layout: 'Layout',
+    save: 'Save',
+    load: 'Load',
+    reset: 'Reset'
+  }
+};
+
+// Chinese translations
+const zh = {
+  translation: {
+    dashboard: '交互式仪表板',
+    loading: '数据加载中...',
+    error: '数据更新失败',
+    timeSeries: '时间序列数据',
+    category: '分类数据',
+    distribution: '分布情况',
+    stacked: '堆叠',
+    grouped: '分组',
+    sortBy: '排序依据',
+    value: '值',
+    categoryLabel: '分类',
+    showComparison: '显示对比',
+    hideComparison: '隐藏对比',
+    donut: '环形图',
+    pie: '饼图',
+    showLabels: '显示标签',
+    hideLabels: '隐藏标签',
+    filter: '筛选',
+    timeRange: '时间范围',
+    categories: '分类',
+    regions: '地区',
+    productLines: '产品线',
+    export: '导出',
+    exportAll: '导出全部',
+    exportCSV: '导出为 CSV',
+    exportJSON: '导出为 JSON',
+    exportPNG: '导出为 PNG',
+    exportSVG: '导出为 SVG',
+    theme: '主题',
+    light: '浅色',
+    dark: '深色',
+    blue: '蓝色',
+    snapshot: '快照',
+    createSnapshot: '创建快照',
+    restoreSnapshot: '恢复快照',
+    deleteSnapshot: '删除快照',
+    renameSnapshot: '重命名快照',
+    history: '历史记录',
+    recentActions: '最近操作',
+    undo: '撤销',
+    redo: '重做',
+    settings: '设置',
+    chartSettings: '图表设置',
+    color: '颜色',
+    style: '样式',
+    layout: '布局',
+    save: '保存',
+    load: '加载',
+    reset: '重置'
+  }
+};
+
+// Japanese translations
+const ja = {
+  translation: {
+    dashboard: 'インタラクティブダッシュボード',
+    loading: 'データの読み込み中...',
+    error: 'データの更新に失敗しました',
+    timeSeries: '時系列データ',
+    category: 'カテゴリデータ',
+    distribution: '分布',
+    stacked: 'スタック',
+    grouped: 'グループ化',
+    sortBy: 'ソート基準',
+    value: '値',
+    categoryLabel: 'カテゴリ',
+    showComparison: '比較を表示',
+    hideComparison: '比較を非表示',
+    donut: 'ドーナツ',
+    pie: 'パイ',
+    showLabels: 'ラベルを表示',
+    hideLabels: 'ラベルを非表示',
+    filter: 'フィルター',
+    timeRange: '時間範囲',
+    categories: 'カテゴリ',
+    regions: '地域',
+    productLines: '製品ライン',
+    export: 'エクスポート',
+    exportAll: 'すべてエクスポート',
+    exportCSV: 'CSV としてエクスポート',
+    exportJSON: 'JSON としてエクスポート',
+    exportPNG: 'PNG としてエクスポート',
+    exportSVG: 'SVG としてエクスポート',
+    theme: 'テーマ',
+    light: 'ライト',
+    dark: 'ダーク',
+    blue: 'ブルー',
+    snapshot: 'スナップショット',
+    createSnapshot: 'スナップショットを作成',
+    restoreSnapshot: 'スナップショットを復元',
+    deleteSnapshot: 'スナップショットを削除',
+    renameSnapshot: 'スナップショットを名前変更',
+    history: '履歴',
+    recentActions: '最近のアクション',
+    undo: '元に戻す',
+    redo: 'やり直す',
+    settings: '設定',
+    chartSettings: 'チャート設定',
+    color: '色',
+    style: 'スタイル',
+    layout: 'レイアウト',
+    save: '保存',
+    load: '読み込み',
+    reset: 'リセット'
+  }
+};
+
+// Initialize i18n
+i18n
+  .use(initReactI18next)
+  .init({
+    resources: {
+      en,
+      zh,
+      ja
+    },
+    lng: localStorage.getItem('language') || 'en',
+    fallbackLng: 'en',
+    interpolation: {
+      escapeValue: false
+    }
+  });
+
+export default i18n;
